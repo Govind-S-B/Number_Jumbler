@@ -35,19 +35,8 @@ while True:
         "/": op_list[2],
         "*": op_list[3]
     }
-    print("in number jumbler, each number from 1-9 and each operation has its value randomized. 0 might now be 5, "
-          "and 5 now be 8, plus might mean division.\n"
-          "the aim of the game is to figure out what each number and operation means\n")
-    print("all commands must be typed into the operation selection\n"
-          "\n + - * / do the operation that has been assigned to those symbols.\n"
-          " note: division means floor division. and subtraction gives absolute values\n"
-          " 5/3 would give 1 with a  remainder of 2, so you only see 1.\n"
-          " of course in the game 5 and 3 may not be 5 and 3,"
-          "and / may not mean division.\n"
-          " also, 1-5 gives 4 not -4\n")
-    print("once you think you've figured it out,you may guess,type \'guess\' note:a wrong guess Will lose you the game."
-          " and guess what each of the symbols and numbers mean")
-    print("Have fun ^_^\n")
+    with open("./intro.txt") as f:
+        print(f.read())
     while not win and strikes < 3:
         op = input("Enter Operation: ").lower()
     #   guessing
