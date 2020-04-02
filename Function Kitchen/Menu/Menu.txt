@@ -1,4 +1,4 @@
 ====== MENU ======
-1.Load Game
+1.Intro & Rules
 2.New Game
-3.Intro & Rules
+3.Load Game
