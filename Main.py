@@ -144,11 +144,15 @@ def Game(x):
         Choose()
 
     def Operation():
-        n1 = int(input("Enter number 1 : "))
-        op = input("Enter operation : ")
-        n2 = int(input("Enter number 2 : "))
-        print("Output is", eval(str(Jnum[n1])+str(Jop[op])+str(Jnum[n2])))
-        Choose()
+        try:
+            n1 = int(input("Enter number 1 : "))
+            op = input("Enter operation : ")
+            n2 = int(input("Enter number 2 : "))
+            print("Output is", eval(str(Jnum[n1])+str(Jop[op])+str(Jnum[n2])))
+            Choose()
+        except:
+            print("Something Funny Happened ! Please try again ")
+            Operation()
 
     def Choose():
 
