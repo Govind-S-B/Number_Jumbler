@@ -5,6 +5,18 @@ import random
 guess_count = n = num = op = Jnum = Jop = Jnum_check = Jop_check = 1  # Initialising Global Variables
 
 
+def Jmap(licht):  # Jumbled Mapper
+
+    Jumbled = random.sample(licht, len(licht))
+
+    Mapping = {}
+
+    for x in range(0, len(licht)):
+        Mapping[licht[x]] = Jumbled[x]
+
+    return(Mapping)
+
+
 def Game(x):
 
     global guess_count
