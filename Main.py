@@ -31,7 +31,7 @@ def Game(x):
     if x is True:
 
         n = int(input("Enter range limit : "))
-        num = list(range(0, n+1))
+        num = list(range(0, n + 1))
 
         op = ["+", "-", "*", "/"]  # op means operation
 
@@ -148,7 +148,7 @@ def Game(x):
             n1 = int(input("Enter number 1 : "))
             op = input("Enter operation : ")
             n2 = int(input("Enter number 2 : "))
-            print("Output is", eval(str(Jnum[n1])+str(Jop[op])+str(Jnum[n2])))
+            print("Output is", eval(str(Jnum[n1]) + str(Jop[op]) + str(Jnum[n2])))
             Choose()
         except:
             print("Something Funny Happened ! Please try again ")
