@@ -150,6 +150,7 @@ def Game(x):  # x is true if its a new game, false if its been loaded
 
             if len(Jop_check) == len(Jnum_check) == 0:  # if there is nothing left to guess
                 print("You Won !")
+                input("press enter to exist game")
                 sys.exit()
 
         else:
@@ -158,9 +159,11 @@ def Game(x):  # x is true if its a new game, false if its been loaded
             print("You have", guess_count, "consecutive chances left")
             if guess_count == 0:
                 print("You Lose")
+                input('press enter to exit game')
                 sys.exit()
 
         Choose()
+    # old code
     '''
     def Operation():
         try:
