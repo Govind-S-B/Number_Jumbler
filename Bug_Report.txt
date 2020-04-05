@@ -1,0 +1,21 @@
+===CHOOSE===
+1.Operation
+2.Guess
+3.Check
+4.Save and Exit
+enter expression: 2-0
+Traceback (most recent call last):
+  File "C:\Users\Govind\Desktop\Coding\Git\Number_Jumbler\Main.py", line 307, in <module>
+  File "C:\Users\Govind\Desktop\Coding\Git\Number_Jumbler\Main.py", line 290, in Menu
+  File "C:\Users\Govind\Desktop\Coding\Git\Number_Jumbler\Main.py", line 279, in Intro_and_Rules
+  File "C:\Users\Govind\Desktop\Coding\Git\Number_Jumbler\Main.py", line 292, in Menu
+  File "C:\Users\Govind\Desktop\Coding\Git\Number_Jumbler\Main.py", line 273, in Game
+  File "C:\Users\Govind\Desktop\Coding\Git\Number_Jumbler\Main.py", line 270, in Choose
+KeyError: 0
+
+Process returned 1 (0x1)        execution time : 1937.899 s
+Press any key to continue . . .
+
+
+
+

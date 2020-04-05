@@ -266,6 +266,9 @@ def Game(x):  # x is true if its a new game, false if its been loaded
         if num1 > n or num2 > n:
             print("ERROR: NUMBER TOO LARGE")
             return None
+        if num1 == 0 or num2 == 0:
+            print("ERROR: 0 is an invalid number")
+            return None
 
         print("Output is", eval(str(Jnum[num1]) + str(Jop[op]) + str(Jnum[num2])))
         return None
