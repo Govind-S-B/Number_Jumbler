@@ -8,7 +8,7 @@ import json
 import random
 # used in jmap
 
-guess_count = n = num = op = Jnum = Jop = Jnum_check = Jop_check = 1  # Initialising Global Variables
+expr = guess_count = n = num = op = Jnum = Jop = Jnum_check = Jop_check = 1  # Initialising Global Variables
 
 
 def Jmap(licht):  # Jumbled Mapper.
@@ -121,9 +121,10 @@ def Game(x):  # x is true if its a new game, false if its been loaded
         global Jop
         global Jnum_check
         global Jop_check
+        global expr
 
-        K = input("Enter Number / Operation (Jumbled) : ")  # K is the symbol
-        V = input("Enter Guess : ")                         # V is the value that symbol holds
+        K = expr[0]  # K is the symbol # key
+        V = expr[2]  # V is the value that symbol holds # value
 
         # x only gives true for correctly guessed operations; x is the key-value check for operations
         if K in Jop.keys():
@@ -161,10 +162,13 @@ def Game(x):  # x is true if its a new game, false if its been loaded
         Choose()
 
     def Operation():
+        global expr
+
         try:
-            n1 = int(input("Enter number 1 : "))
-            op = input("Enter operation : ")
-            n2 = int(input("Enter number 2 : "))
+
+            n1 = int(expr[0])
+            op = expr[1]
+            n2 = int(expr[2])
             print("Output is", eval(str(Jnum[n1]) + str(Jop[op]) + str(Jnum[n2])))
             Choose()
         except:
@@ -173,21 +177,29 @@ def Game(x):  # x is true if its a new game, false if its been loaded
 
     def Choose():
 
+        global expr
+
         with open("./Choose.txt") as f:
             print(f.read())
 
-        INPUT = input("Enter option : ")
+        INPUT = input("CMD : ")
+        cmd = INPUT.split()[0]
+        try:
+            expr = re.split(r'(\D)', INPUT.split()[1])
 
-        if INPUT == "1":
+        except:
+            pass
+
+        if cmd == "oper":
 
             Operation()
-        if INPUT == "2":
+        if cmd == "guess":
 
             Guess()
-        if INPUT == "3":
+        if cmd == "check":
 
             Check()
-        if INPUT == "4":
+        if cmd == "save":
 
             Save()
 

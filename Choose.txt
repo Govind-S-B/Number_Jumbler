@@ -1,5 +1,5 @@
 ===CHOOSE===
-1.Operation
-2.Guess
-3.Check
-4.Save and Exit
+Operation [oper]
+Guess [guess]
+Check [check]
+Save and Exit [save]
