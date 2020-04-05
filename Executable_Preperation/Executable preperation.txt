@@ -16,3 +16,4 @@ make program folder s zip file rename it as Number_Jumbler_Installer
 open nsis and choose program zip 
 
 set installer name as number jumbler installer
+default path $PROGRAMFILES\Number_Jumbler
