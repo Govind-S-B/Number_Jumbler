@@ -8,6 +8,7 @@ import json
 import random
 # used in jmap
 
+
 guess_count = n = num = op = Jnum = Jop = Jnum_check = Jop_check = 1  # Initialising Global Variables
 
 
@@ -159,7 +160,7 @@ def Game(x):  # x is true if its a new game, false if its been loaded
                 sys.exit()
 
         Choose()
-
+    '''
     def Operation():
         try:
             n1 = int(input("Enter number 1 : "))
@@ -170,13 +171,15 @@ def Game(x):  # x is true if its a new game, false if its been loaded
         except:
             print("Something Funny Happened ! Please try again ")
             Operation()
-
+    '''
+    '''
     def Choose():
 
         with open("./Choose.txt") as f:
             print(f.read())
 
-        INPUT = input("Enter option : ")
+        INPUT = input("Enter expression : ")
+        sliced_expression = expression_slicer(INPUT)
 
         if INPUT == "1":
 
@@ -194,8 +197,76 @@ def Game(x):  # x is true if its a new game, false if its been loaded
         else:
             print("Not a valid option")
             Choose()
+    '''
+    def Choose():
+        expression = input("enter expression: ")
+        with open("./Choose.txt") as f:
+            print(f.read())
 
-    Choose()
+        expression = expression.replace(" ", "")  # removes all spacing from the expression
+
+        if expression.lower() == "save":
+            Save()
+            return None
+        if expression.lower() == "guess":
+            Guess()
+            return None
+        if expression.lower() == "check":
+            Check()
+            return None
+
+        # character set is the set of all valid characters in the expressions
+        operators = ['+', '-', '*', '/']
+        character_set = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
+        character_set.extend(operators)
+
+        operator_count = 0  # tracks how many operators are there in the expression
+
+        # makes sure the expression only contains valid characters, that is numbers and operators only
+        for character in expression:
+            if character in character_set:
+                pass
+            else:
+                print('ERROR: INVALID CHARACTER/COMMAND DETECTED')
+                return None
+
+        # counts how many operators there are in the expression
+        for operator in operators:
+            operator_count += expression.count(operator)
+
+        # checks to make sure there is only 1 operator
+        if operator_count < 1:
+            print('ERROR: NO OPERATOR DETECTED')
+            return None
+        elif operator_count > 1:
+            print('ERROR: TOO MANY OPERATORS')
+            return None
+
+        elif operator_count == 1:
+            pass
+
+        # mathematically speaking, the error message below should be impossible to trigger.
+        else:
+            print('if you are seeing this error message, something has seriously fucked up')
+            return None
+
+        # following code figures out which operator is being used
+
+        for operator in operators:
+            if operator in expression:
+                op = operator  # op is the operator in the expression
+                break
+        index = expression.index(op)  # this is the index value of the operator in the expression
+
+        num1 = int(expression[0:index])     # num1 is the number before the operator
+        num2 = int(expression[index + 1:])  # num2 is the number after the operator
+
+        if num1 > n or num2 > n:
+            print("ERROR: NUMBER TOO LARGE")
+            return None
+
+        print("Output is", eval(str(Jnum[num1]) + str(Jop[op]) + str(Jnum[num2])))
+        return None
 
 
 def Intro_and_Rules():
