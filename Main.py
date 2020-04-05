@@ -41,7 +41,7 @@ def Game(x):  # x is true if its a new game, false if its been loaded
     if x is True:  # for new game
 
         n = int(input("Enter range limit : "))
-        num = list(range(0, n + 1))
+        num = list(range(1, n + 1))
 
         op = ["+", "-", "*", "/"]
 
@@ -131,10 +131,11 @@ def Game(x):  # x is true if its a new game, false if its been loaded
             x = (V == Jop[K])  # we need x as a dummy variable in case Jop[K] gives KeyError.
         else:
             x = False
-
-        # y is true if player correctly guesses jumbled number; y is the key-value check for number
-        y = (V == str(Jnum[int(K)]))
-
+        y = False
+        try:
+            y = (V == str(Jnum[int(K)]))
+        except ValueError:
+            pass
         if x or y:
             print("Your Guess was right !")
             guess_count = 3  # resets chances for guessing
@@ -268,7 +269,7 @@ def Game(x):  # x is true if its a new game, false if its been loaded
 
         print("Output is", eval(str(Jnum[num1]) + str(Jop[op]) + str(Jnum[num2])))
         return None
-    while len(Jnum_check) + len(Jop_check) > 1:
+    while True:
         Choose()
 
 
