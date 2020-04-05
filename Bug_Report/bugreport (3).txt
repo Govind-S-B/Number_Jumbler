@@ -1,0 +1,189 @@
+no error in menu. no invalid inputs cause crashes
+
+ATTEMPTED ACTION:
+
+1 - invalid operator and numbers
+
+
+===CHOOSE===
+1.Operation
+2.Guess
+3.Check
+4.Save and Exit
+Enter option : 1
+Enter number 1 : 2
+Enter operation : fds
+Enter number 2 : dfs
+Traceback (most recent call last):
+  File "C:\! Programming\Active Programs\Friends programs\Dev v3\Main.py", line 211, in <module>
+    Menu()
+  File "C:\! Programming\Active Programs\Friends programs\Dev v3\Main.py", line 194, in Menu
+    Intro_and_Rules()
+  File "C:\! Programming\Active Programs\Friends programs\Dev v3\Main.py", line 183, in Intro_and_Rules
+    Menu()
+  File "C:\! Programming\Active Programs\Friends programs\Dev v3\Main.py", line 202, in Menu
+    Menu()
+  File "C:\! Programming\Active Programs\Friends programs\Dev v3\Main.py", line 202, in Menu
+    Menu()
+  File "C:\! Programming\Active Programs\Friends programs\Dev v3\Main.py", line 202, in Menu
+    Menu()
+  [Previous line repeated 5 more times]
+  File "C:\! Programming\Active Programs\Friends programs\Dev v3\Main.py", line 198, in Menu
+    Game(False)  # Load
+  File "C:\! Programming\Active Programs\Friends programs\Dev v3\Main.py", line 177, in Game
+    Choose()
+  File "C:\! Programming\Active Programs\Friends programs\Dev v3\Main.py", line 162, in Choose
+    Operation()
+  File "C:\! Programming\Active Programs\Friends programs\Dev v3\Main.py", line 149, in Operation
+    n2 = int(input("Enter number 2 : "))
+ValueError: invalid literal for int() with base 10: 'dfs'
+
+EXPECTED OUTPUT:
+
+ERROR INVALID OUTPUT(why havent you implemented my code yet, i literally handled all the error checking in it too)
+
+
+2 - negative number for range
+
+_   _                 _                   ___                 _     _
+| \ | |               | |                 |_  |               | |   | |
+|  \| |_   _ _ __ ___ | |__   ___ _ __      | |_   _ _ __ ___ | |__ | | ___ _ __
+| . ` | | | | '_ ` _ \| '_ \ / _ \ '__|     | | | | | '_ ` _ \| '_ \| |/ _ \ '__|
+| |\  | |_| | | | | | | |_) |  __/ |    /\__/ / |_| | | | | | | |_) | |  __/ |
+\_| \_/\__,_|_| |_| |_|_.__/ \___|_|    \____/ \__,_|_| |_| |_|_.__/|_|\___|_|
+
+=================================================================================
+Welcome to Number Jumbler
+=================================================================================
+====== MENU ======
+1.Intro and Rules
+2.New Game
+3.Load Game
+Enter option : 2
+Enter range limit : -342
+===CHOOSE===
+1.Operation
+2.Guess
+3.Check
+4.Save and Exit
+Enter option : 1
+Enter number 1 : 1
+Enter operation : +
+Enter number 2 : 2
+Traceback (most recent call last):
+  File "C:\! Programming\Active Programs\Friends programs\Dev v3\Main.py", line 211, in <module>
+    Menu()
+  File "C:\! Programming\Active Programs\Friends programs\Dev v3\Main.py", line 196, in Menu
+    Game(True)  # New
+  File "C:\! Programming\Active Programs\Friends programs\Dev v3\Main.py", line 177, in Game
+    Choose()
+  File "C:\! Programming\Active Programs\Friends programs\Dev v3\Main.py", line 162, in Choose
+    Operation()
+  File "C:\! Programming\Active Programs\Friends programs\Dev v3\Main.py", line 150, in Operation
+    print("Output is", eval(str(Jnum[n1])+str(Jop[op])+str(Jnum[n2])))
+KeyError: 1
+
+Process returned 1 (0x1)        execution time : 23.093 s
+Press any key to continue . . .
+
+
+3 - 0 for range
+
+_   _                 _                   ___                 _     _
+| \ | |               | |                 |_  |               | |   | |
+|  \| |_   _ _ __ ___ | |__   ___ _ __      | |_   _ _ __ ___ | |__ | | ___ _ __
+| . ` | | | | '_ ` _ \| '_ \ / _ \ '__|     | | | | | '_ ` _ \| '_ \| |/ _ \ '__|
+| |\  | |_| | | | | | | |_) |  __/ |    /\__/ / |_| | | | | | | |_) | |  __/ |
+\_| \_/\__,_|_| |_| |_|_.__/ \___|_|    \____/ \__,_|_| |_| |_|_.__/|_|\___|_|
+
+=================================================================================
+Welcome to Number Jumbler
+=================================================================================
+====== MENU ======
+1.Intro and Rules
+2.New Game
+3.Load Game
+Enter option : 1
+<<Intro>>
+Welcome to the Number Jumbler!
+In this game all the operations(+ - * /) and numbers from 0 to (a user specified number) have been mixed up and its your job to figure out which is which
+<<Rules>>
+1. n should be positive
+2. dont try anything funny ... It makes me sad
+====== MENU ======
+1.Intro and Rules
+2.New Game
+3.Load Game
+Enter option : 2
+Enter range limit : 0
+===CHOOSE===
+1.Operation
+2.Guess
+3.Check
+4.Save and Exit
+Enter option : 1
+Enter number 1 : 1
+Enter operation : +
+Enter number 2 : 1
+Traceback (most recent call last):
+  File "C:\! Programming\Active Programs\Friends programs\Dev v3\Main.py", line 211, in <module>
+    Menu()
+  File "C:\! Programming\Active Programs\Friends programs\Dev v3\Main.py", line 194, in Menu
+    Intro_and_Rules()
+  File "C:\! Programming\Active Programs\Friends programs\Dev v3\Main.py", line 183, in Intro_and_Rules
+    Menu()
+  File "C:\! Programming\Active Programs\Friends programs\Dev v3\Main.py", line 196, in Menu
+    Game(True)  # New
+  File "C:\! Programming\Active Programs\Friends programs\Dev v3\Main.py", line 177, in Game
+    Choose()
+  File "C:\! Programming\Active Programs\Friends programs\Dev v3\Main.py", line 162, in Choose
+    Operation()
+  File "C:\! Programming\Active Programs\Friends programs\Dev v3\Main.py", line 150, in Operation
+    print("Output is", eval(str(Jnum[n1])+str(Jop[op])+str(Jnum[n2])))
+KeyError: 1
+
+Process returned 1 (0x1)        execution time : 15.093 s
+Press any key to continue . . .
+
+4 - enter number greater than range
+
+_   _                 _                   ___                 _     _
+| \ | |               | |                 |_  |               | |   | |
+|  \| |_   _ _ __ ___ | |__   ___ _ __      | |_   _ _ __ ___ | |__ | | ___ _ __
+| . ` | | | | '_ ` _ \| '_ \ / _ \ '__|     | | | | | '_ ` _ \| '_ \| |/ _ \ '__|
+| |\  | |_| | | | | | | |_) |  __/ |    /\__/ / |_| | | | | | | |_) | |  __/ |
+\_| \_/\__,_|_| |_| |_|_.__/ \___|_|    \____/ \__,_|_| |_| |_|_.__/|_|\___|_|
+
+=================================================================================
+Welcome to Number Jumbler
+=================================================================================
+====== MENU ======
+1.Intro and Rules
+2.New Game
+3.Load Game
+Enter option : 2
+Enter range limit : 10
+===CHOOSE===
+1.Operation
+2.Guess
+3.Check
+4.Save and Exit
+Enter option : 1
+Enter number 1 : 100
+Enter operation : -
+Enter number 2 : 3
+Traceback (most recent call last):
+  File "C:\! Programming\Active Programs\Friends programs\Dev v3\Main.py", line 211, in <module>
+    Menu()
+  File "C:\! Programming\Active Programs\Friends programs\Dev v3\Main.py", line 196, in Menu
+    Game(True)  # New
+  File "C:\! Programming\Active Programs\Friends programs\Dev v3\Main.py", line 177, in Game
+    Choose()
+  File "C:\! Programming\Active Programs\Friends programs\Dev v3\Main.py", line 162, in Choose
+    Operation()
+  File "C:\! Programming\Active Programs\Friends programs\Dev v3\Main.py", line 150, in Operation
+    print("Output is", eval(str(Jnum[n1])+str(Jop[op])+str(Jnum[n2])))
+KeyError: 100
+
+Process returned 1 (0x1)        execution time : 14.681 s
+Press any key to continue . . .

@@ -1,5 +1,0 @@
-===CHOOSE===
-Operation [oper]
-Guess [guess]
-Check [check]
-Save and Exit [save]

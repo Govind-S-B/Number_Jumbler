@@ -1,0 +1,18 @@
+command line:
+cd C:\Users\Govind\Desktop\Coding\Git\Number_Jumbler\Program
+pyinstaller --onefile --icon=../Executable_Preperation/numberjumbler.ico Main.py
+
+delete from program folder
+build
+pycache
+main.spec
+
+move main.exe from dist to program folder
+[optional] delete main.py and rename main.exe as NJ.exe
+delete dist folder
+
+make program folder s zip file rename it as Number_Jumbler_Installer
+
+open nsis and choose program zip 
+
+set installer name as number jumbler installer

@@ -1,0 +1,46 @@
+no error in menu. no invalid inputs cause crashes
+
+ATTEMPTED ACTION:
+
+1 - invalid operator and numbers
+
+
+===CHOOSE===
+1.Operation
+2.Guess
+3.Check
+4.Save and Exit
+Enter option : 1
+Enter number 1 : 2
+Enter operation : fds
+Enter number 2 : dfs
+Traceback (most recent call last):
+  File "C:\! Programming\Active Programs\Friends programs\Dev v3\Main.py", line 211, in <module>
+    Menu()
+  File "C:\! Programming\Active Programs\Friends programs\Dev v3\Main.py", line 194, in Menu
+    Intro_and_Rules()
+  File "C:\! Programming\Active Programs\Friends programs\Dev v3\Main.py", line 183, in Intro_and_Rules
+    Menu()
+  File "C:\! Programming\Active Programs\Friends programs\Dev v3\Main.py", line 202, in Menu
+    Menu()
+  File "C:\! Programming\Active Programs\Friends programs\Dev v3\Main.py", line 202, in Menu
+    Menu()
+  File "C:\! Programming\Active Programs\Friends programs\Dev v3\Main.py", line 202, in Menu
+    Menu()
+  [Previous line repeated 5 more times]
+  File "C:\! Programming\Active Programs\Friends programs\Dev v3\Main.py", line 198, in Menu
+    Game(False)  # Load
+  File "C:\! Programming\Active Programs\Friends programs\Dev v3\Main.py", line 177, in Game
+    Choose()
+  File "C:\! Programming\Active Programs\Friends programs\Dev v3\Main.py", line 162, in Choose
+    Operation()
+  File "C:\! Programming\Active Programs\Friends programs\Dev v3\Main.py", line 149, in Operation
+    n2 = int(input("Enter number 2 : "))
+ValueError: invalid literal for int() with base 10: 'dfs'
+
+EXPECTED OUTPUT:
+
+ERROR INVALID OUTPUT(why havent you implemented my code yet, i literally handled all the error checking in it too)
+
+
+2 - only invalid operator
