@@ -199,10 +199,11 @@ def Game(x):  # x is true if its a new game, false if its been loaded
             Choose()
     '''
     def Choose():
-        expression = input("enter expression: ")
+
         with open("./Choose.txt") as f:
             print(f.read())
 
+        expression = input("enter expression: ")
         expression = expression.replace(" ", "")  # removes all spacing from the expression
 
         if expression.lower() == "save":
@@ -267,6 +268,8 @@ def Game(x):  # x is true if its a new game, false if its been loaded
 
         print("Output is", eval(str(Jnum[num1]) + str(Jop[op]) + str(Jnum[num2])))
         return None
+    while len(Jnum_check) + len(Jop_check) > 1:
+        Choose()
 
 
 def Intro_and_Rules():
