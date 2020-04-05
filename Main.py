@@ -7,6 +7,7 @@ import json
 # for loading and storing save files
 import random
 # used in jmap
+import re
 
 expr = guess_count = n = num = op = Jnum = Jop = Jnum_check = Jop_check = 1  # Initialising Global Variables
 
