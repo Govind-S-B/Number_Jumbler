@@ -298,7 +298,11 @@ def Menu():
         Game(True)  # New
     if INPUT == "3":
         Game(False)  # Load
-
+    if INPUT == "4":
+        print("\nThe Game Number Jumbler was invented and developed by Arjun Pratap and Govid S.B.")
+        print("email: Arjun - arjunpratap@gmail.com")
+        print("       Govind - b.s.dnivog@gmail.com\n")
+        Menu()
     else:
         print("Not a valid option")
         Menu()
