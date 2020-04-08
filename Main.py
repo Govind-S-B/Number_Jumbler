@@ -40,7 +40,7 @@ def Game(x):  # x is true if its a new game, false if its been loaded
 
     if x is True:  # for new game
 
-        n = int(input("Enter range limit : "))
+        n = int(input("Enter range limit(eg: if you enter 15 it randomizes all numbers from 1-15): "))
         num = list(range(1, n + 1))
 
         op = ["+", "-", "*", "/"]
