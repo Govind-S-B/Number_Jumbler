@@ -1,0 +1,5 @@
+====== MENU ======
+1.Intro and Rules
+2.New Game
+3.Load Game
+4.Credits
